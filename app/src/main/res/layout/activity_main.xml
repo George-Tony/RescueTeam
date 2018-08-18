@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/mailListBackground">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:weightSum="2"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Track My Location"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+            <Switch
+                android:id="@+id/toogleLocationTrack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:checked="true"
+                android:layout_weight="1"
+                android:gravity="start"/>
+
+
+
+
+        </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/fifteenMins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 Mins"
+                        android:checked="false"
+                        android:layout_marginTop="2dp"/>
+
+                    <RadioButton
+                        android:id="@+id/thirtyMins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 Mins"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/oneHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 hour"
+                        android:checked="false"/>
+
+                </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Current Location"
+                android:id="@+id/currentLocationtext"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/getLocationGPS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:text="Get Location from GPS"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAllCaps="false"
+            />
+
+
+    </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Going to"
+                        android:id="@+id/goingTo"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="4dp">
+
+    <Button
+        android:id="@+id/submitLocationUpdate"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Update location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/shareMyLocation"
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:text="Share location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SOS List"
+            android:textSize="18dp"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/mailListBackground"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recylerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
